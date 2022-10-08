@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital 7-segment clock</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            
+            <div class="buttons">
+                <button type="button"class="button">NEXT DIGIT</button>
+                <button type="button"class="button" data-action="increment">UP</button>
+                <button type="button"class="button" data-action="decrement">DOWN</button>
+            </div>
+            <!-- <div id="counter">
+                <button type="button" data-action="decrement">-1</button>
+                <span id="value">0</span>
+                <button type="button" data-action="increment">+1</button>
+              </div> -->
+            <div class="row counter">
+                    <div class="clock">
+                        <div class="number" id="value" >00</div>
+                        <div class="text">HOURS</div>
+                    </div>
+                    <!-- MINUTES -->
+                    <div class="clock">
+                        <div class="number" id="value">00</div>
+                        <div class="text">MINUTES</div>
+                    </div>
+                    <!-- SECONDS -->
+                    <div class="clock">
+                        <div class="number" id="value">00</div>
+                        <div class="text" >SECONDS</div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="clock-custom.js" type="module"></script> -->
+    <!-- <script src="real-time.js" type="module"></script> -->
+    <script src="counter.js" type="module"></script>
+</body>
+</html>
