@@ -1,0 +1,73 @@
+.clock-box{
+    width: 600px;
+    height: 300px;
+    border-radius: 20px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4096ee+0,4096ee+100;Blue+Flat+%232 */
+    background: #4096ee; /* Old browsers */
+    background: -moz-linear-gradient(left,  #4096ee 0%, #4096ee 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #4096ee 0%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #4096ee 0%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=1 ); /* IE6-9 */
+    box-shadow: 0 10px 5px -6px rgb(0, 0, 0,5);
+}
+
+.row{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock{
+    display: inline-block;
+}
+
+.number{
+    font-family: sevenSegment;
+    font-size: 60px;
+    text-align:center;
+    width: 60px;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 20px;
+    background: #303030;
+    color:#fff;
+    box-shadow: 0 6px 6px -6px rgb(0, 0, 0,7);
+}
+
+
+.clock .text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color:#fff;
+    background: #303030;
+    display: block;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 6px 6px -6px rgb(0, 0, 0,7);
+}
+
+.buttons{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 20px;
+}
+
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-right: 10px;
+    background: #303030;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding:7px;
+    box-shadow: 0 6px 6px -6px rgb(0, 0, 0,7);
+}
+
+.active{
+    background: green;
+}

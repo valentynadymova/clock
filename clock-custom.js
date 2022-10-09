@@ -1,11 +1,14 @@
 const startTime = new Date();
+const h=document.getElementById('hours').value;
+console.log(h);
+
 function clock() {
 
     //the time you want to start from
     const myTime = new Date();
-    // const h= myTime.setHours(5);
-    // const m=myTime.setMinutes(20);
-    // const s= myTime.setSeconds(40)
+    let hours = myTime.setHours(5);
+    let minutes=myTime.setMinutes(20);
+    let seconds= myTime.setSeconds(40)
 
   
     ///calcualte the difference between the start and current time
@@ -16,17 +19,17 @@ function clock() {
     myTime.setMilliseconds(myTime.getMilliseconds() + diff);
 
     //Generate your output
-    let seconds = myTime.getSeconds();
+     seconds = myTime.getSeconds();
     if(seconds<10){
         seconds = "0"+ seconds;
     }
     document.getElementById("seconds").innerHTML=seconds;
-    let minutes = myTime.getMinutes();
+     minutes = myTime.getMinutes();
     if(minutes < 10){
         minutes = "0"+ minutes;
     }
     document.getElementById("minutes").innerHTML=minutes;
-    let hours = myTime.getHours();
+    hours = myTime.getHours();
     if(hours<10){
         hours = "0"+ hours;
     }

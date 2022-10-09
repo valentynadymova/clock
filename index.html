@@ -9,37 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="box">
-            
-            <div class="buttons">
-                <button type="button"class="button">NEXT DIGIT</button>
-                <button type="button"class="button" data-action="increment">UP</button>
-                <button type="button"class="button" data-action="decrement">DOWN</button>
-            </div>
-            <!-- <div id="counter">
-                <button type="button" data-action="decrement">-1</button>
-                <span id="value">0</span>
-                <button type="button" data-action="increment">+1</button>
-              </div> -->
-            <div class="row counter">
-                    <div class="clock">
-                        <div class="number" id="value" >00</div>
-                        <div class="text">HOURS</div>
-                    </div>
-                    <!-- MINUTES -->
-                    <div class="clock">
-                        <div class="number" id="value">00</div>
-                        <div class="text">MINUTES</div>
-                    </div>
-                    <!-- SECONDS -->
-                    <div class="clock">
-                        <div class="number" id="value">00</div>
-                        <div class="text" >SECONDS</div>
-            </div>
-        </div>
+        <clock-box hours="00" mins="00" secs="00"></clock-box>
+        <a-timer></a-timer>
+
     </div>
+    
     <!-- <script src="clock-custom.js" type="module"></script> -->
     <!-- <script src="real-time.js" type="module"></script> -->
-    <script src="counter.js" type="module"></script>
+   
+    <script src="index.js" type="module"></script>
 </body>
 </html>
