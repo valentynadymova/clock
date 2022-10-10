@@ -9,19 +9,19 @@ html, body{
 }
 
 body{
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
-    background: #eeeeee; /* Old browsers */
-    background: -moz-linear-gradient(left,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 */
-}
-
-.container{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+100;Gren+3D */
+        background: #eeeeee; /* Old browsers */
+        background: -moz-linear-gradient(left,  #eeeeee 0%, #cccccc 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  #eeeeee 0%,#cccccc 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  #eeeeee 0%,#cccccc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 ); /* IE6-9 */
+    }
+    
+    
+    .container{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
 

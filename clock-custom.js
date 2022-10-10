@@ -1,46 +1,38 @@
-const startTime = new Date();
-const h=document.getElementById('hours').value;
-console.log(h);
+var startTime = new Date();
 
 function clock() {
 
-    //the time you want to start from
-    const myTime = new Date();
-    let hours = myTime.setHours(5);
-    let minutes=myTime.setMinutes(20);
-    let seconds= myTime.setSeconds(40)
-
+    let mytime = new Date();
+    let hours=mytime.setHours(5);
+    let minutes=mytime.setMinutes(25);
+    let seconds=mytime.setSeconds(33);
+    
+    let diff = new Date() - startTime;
+    
   
-    ///calcualte the difference between the start and current time
-    const diff = new Date() - startTime;
-    // console.log(diff)
-  
-    //add that difference to the offset time
-    myTime.setMilliseconds(myTime.getMilliseconds() + diff);
+    mytime.setMilliseconds(mytime.getMilliseconds() + diff);
 
-    //Generate your output
-     seconds = myTime.getSeconds();
-    if(seconds<10){
-        seconds = "0"+ seconds;
-    }
-    document.getElementById("seconds").innerHTML=seconds;
-     minutes = myTime.getMinutes();
-    if(minutes < 10){
-        minutes = "0"+ minutes;
-    }
-    document.getElementById("minutes").innerHTML=minutes;
-    hours = myTime.getHours();
-    if(hours<10){
-        hours = "0"+ hours;
-    }
-    document.getElementById("hours").innerHTML=hours;
+    seconds = mytime.getSeconds();
+    minutes = mytime.getMinutes();
+    hours = mytime.getHours();
 
+    let currentTime = hours + ":" + minutes + ":" + seconds;
 
-    window.localStorage.setItem('time', myTime);
+    document.getElementById("Timer").innerHTML = currentTime;  
+    
 
-}
+};
 
 setInterval(clock, 1000);
-clock();
+
+const lastVisit=localStorage.setItem('lastTime', currentTime);
+
+const realTime= new Date();
+
+let visitTimeDiff = realTime - lastVisit;
+
+console.log(visitTimeDiff);
+
+
 
 
