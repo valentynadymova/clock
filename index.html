@@ -10,12 +10,21 @@
 <body>
     <div class="container">
         <clock-box hours="00" mins="00" secs="00"></clock-box>
-        <span id="Timer">x</span>
+        <!-- <span id="Timer">x</span> -->
 
     </div>
     
-    <script src="clock-custom.js" type="module"></script>
+    <!-- <script src="clock-custom.js" type="module"></script> -->
     <script src="index.js" type="module"></script>
+    <script>
+        setTimeout(function(){
+            const clockBox=document.querySelector("clock-box");
+            const currentTime=clockBox.getTime();
+            
+
+            clockBox.setTime();
+        },10000)
+    </script>
 
 </body>
 </html>

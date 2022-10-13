@@ -75,6 +75,8 @@ class Clock extends HTMLElement{
         btnDown.addEventListener("click",this.dec.bind(this)); 
         let btnStart=this.shadow.querySelector("#start");
         btnStart.addEventListener("click",this.timer.bind(this));
+        let btnNxtDigit=this.shadow.querySelector('#nxtDigit');
+        btnNxtDigit.addEventListener("click", this.nxtDigit.bind(this));
     };
 
     connectedCallback(){
@@ -85,6 +87,8 @@ class Clock extends HTMLElement{
         btnDown.addEventListener("click",this.dec.bind(this));
         let btnStart=this.shadow.querySelector("#start");
         btnStart.addEventListener("click",this.timer.bind(this));
+        let btnNxtDigit=this.shadow.querySelector('#nxtDigit');
+        btnNxtDigit.addEventListener("click", this.nxtDigit.bind(this));
     }
 
     inc(){
@@ -118,17 +122,53 @@ class Clock extends HTMLElement{
         if(this.hours<0){
             this.hours=0;
         }
+        if(this.hours<10){
+            this.hours="0"+this.hours;
+        }
         this.mins-=1;
         if(this.mins<0){
             this.mins=0;
+        }
+        if(this.mins<10){
+            this.mins="0"+this.mins;
         }
         this.secs-=1;
         if(this.secs<0){
             this.secs=0;
         }
+        if(this.secs<10){
+            this.secs="0"+this.secs;
+        }
     };
 
-    getTime(){};
+    nxtDigit(){
+        let items=this.template.getElementById('number');
+      
+        console.log(items);
+
+        (function () {
+        items.addClass('active');});
+
+    }
+
+    getTime(){
+        const lastVisit=localStorage.getItem('real-time');
+        const diffTime= Date.now()-lastVisit;
+        const timeNow= Date.now()+diffTime;
+        
+        const seconds = Math.floor(timeNow/1000);
+        const minutes = Math.floor(seconds/60);
+        const hours = Math.floor(minutes/60);
+    
+        let currentTime = hours + ":" + minutes + ":" + seconds;
+        console.log(currentTime);
+       
+
+
+    };
+
+    setTime(){};
+
 
     timer(){        
         setInterval(()=>{
@@ -142,10 +182,24 @@ class Clock extends HTMLElement{
                 this.hours++;
                 }
             }
+            let currentTime=this.hours+this.mins+this.secs;
+            localStorage.setItem("userTime", currentTime);
+            let userHours=this.hours;
+            localStorage.setItem("user-hours", userHours);
+            let userMins=this.mins;
+            localStorage.setItem("user-mins", userMins);
+            let userSecs=this.secs;
+            localStorage.setItem('user-secs',userSecs);  
+
+            const realTime=Date.now();
+            localStorage.setItem('real-time', realTime);
+
+            
+
+    
         },1000);
 
-        let currentTime=this.hours+this.mins+this.secs;
-        localStorage.setItem("userTime", currentTime);
+    
     };
 
     render(){
@@ -162,17 +216,17 @@ class Clock extends HTMLElement{
         <div class="row counter">
 
         <div class="clock">
-        <div class="number active" id="hours" >${this.hours}</div>
+        <p class="number" id="hours" >${this.hours}</p>
         <div class="text">HOURS</div>
         </div>
 
         <div class="clock">
-        <div class="number" id="mins">${this.mins}</div>
+        <p class="number" id="mins">${this.mins}</p>
         <div class="text">MINUTES</div>
         </div>
 
         <div class="clock">
-        <div class="number" id="secs">${this.secs}</div>
+        <p class="number" id="secs">${this.secs}</p>
         <div class="text">SECONDS</div>
         </div>
         </div>

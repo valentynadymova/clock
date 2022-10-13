@@ -19,19 +19,21 @@ function clock() {
     let currentTime = hours + ":" + minutes + ":" + seconds;
 
     document.getElementById("Timer").innerHTML = currentTime;  
+
+    localStorage.setItem('my-time', currentTime);
+    const lastVisit=localStorage.getItem("my-time");
+    console.log(lastVisit)
     
 
 };
 
 setInterval(clock, 1000);
 
-const lastVisit=localStorage.setItem('lastTime', currentTime);
 
-const realTime= new Date();
 
-let visitTimeDiff = realTime - lastVisit;
 
-console.log(visitTimeDiff);
+
+
 
 
 
