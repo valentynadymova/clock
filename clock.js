@@ -141,27 +141,23 @@ class Clock extends HTMLElement{
         }
     };
 
-    nxtDigit(){
-        let items=this.template.getElementById('number');
-      
-        console.log(items);
-
-        (function () {
-        items.addClass('active');});
-
+    nxtDigit=()=>{
+        // let items=this.shadowRoot.querySelector('#hours');
+        // console.log(items);
     }
 
     getTime(){
         const lastVisit=localStorage.getItem('real-time');
         const diffTime= Date.now()-lastVisit;
-        const timeNow= Date.now()+diffTime;
+        const timeNow= new Date().getTime()+diffTime;
+        // let currentTime=timeNow.toString('YYYY-MM-dd');
         
-        const seconds = Math.floor(timeNow/1000);
-        const minutes = Math.floor(seconds/60);
-        const hours = Math.floor(minutes/60);
+        // const seconds = Math.floor(timeNow/1000);
+        // const minutes = Math.floor(seconds/60);
+        // const hours = Math.floor(minutes/60);
     
-        let currentTime = hours + ":" + minutes + ":" + seconds;
-        console.log(currentTime);
+        // let currentTime = hours + ":" + minutes + ":" + seconds;
+        console.log(timeNow);
        
 
 
