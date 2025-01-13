@@ -1,34 +1,3 @@
-// const template = document.createElement("template");
-// template.innerHTML=`
-// <link rel="stylesheet" href="clock.css"/>
-// <div class="clock-box">
-            
-// <div class="buttons">
-// <button type="button"class="button" id="nxtDigit">NEXT DIGIT</button>
-// <button type="button"class="button" id="up">UP</button>
-// <button type="button"class="button" id="down">DOWN</button>
-// </div>
-// <div class="row counter">
-
-// <div class="clock">
-// <div class="number active" id="hours"></div>
-// <div class="text">HOURS</div>
-// </div>
-
-// <div class="clock">
-// <div class="number" id="mins">00</div>
-// <div class="text">MINUTES</div>
-// </div>
-
-// <div class="clock">
-// <div class="number" id="secs">00</div>
-// <div class="text">SECONDS</div>
-// </div>
-// </div>
-// </div>
-// `;
-
-
 class Clock extends HTMLElement{
     constructor(){
         super();
@@ -198,7 +167,7 @@ class Clock extends HTMLElement{
     
     };
 
-    render(){
+    showTimer(){
         this.shadow.innerHTML=`
         <link rel="stylesheet" href="clock.css"/>
         <div class="clock-box">
